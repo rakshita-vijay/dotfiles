@@ -23,16 +23,13 @@ cask_args appdir: '/Applications', no_quarantine: true
 # java_present = system('/usr/libexec/java_home --failfast')
 is_arm = Hardware::CPU.arm?
 
-# Use my login id to selectively enable certain lines/blocks (kept for reference)
-# is_vijay = `whoami`.chomp == 'vijay'
-
-# tap 'buo/cask-upgrade'
 tap 'romkatv/powerlevel10k'
 # tap 'trailofbits/homebrew-brew-verify'
 
 brew 'bash'
 brew 'bat'
 brew 'btop'
+brew 'clang-format'
 brew 'curl'
 brew 'diff-so-fancy'
 brew 'direnv'   # Note: If you get an error (for eg after upgrading direnv or if moving to a different ARM machine), you will need to delete '${HOME}/.zsh-evalcache' folder
@@ -64,15 +61,15 @@ brew 'powerlevel10k'
 brew 'prettyping'
 # brew 'reattach-to-user-namespace' # Needed if using tmux (to be able to access the macos clipboard from within tmux)
 brew 'ripgrep'
-brew 'shellcheck'
+# brew 'shellcheck'
 # brew 'speedtest-cli'
-brew 'syncthing'
+# brew 'syncthing'
 brew 'tldr'
 # brew 'tmux'
 brew 'vim'
 brew 'watch'
 brew 'wget'
-brew 'wifi-password'
+# brew 'wifi-password'
 brew 'zsh'
 
 # ----------------------------------------------------------------------------------------------------------
@@ -81,10 +78,12 @@ mas 'iBar-Menubar icon control tool', id: 6443843900
 
 # ----------------------------------------------------------------------------------------------------------
 cask 'aldente'
-cask 'apparency'
+# cask 'apparency'
 cask 'appcleaner'
-cask 'arc'
+# cask 'arc'
+cask 'bitwarden'
 cask 'brave-browser@nightly'
+cask 'cleanmymac'
 cask 'clocker'
 cask 'cloudflare-warp'
 cask 'command-x'
@@ -93,10 +92,10 @@ cask 'command-x'
 cask 'firefox@nightly' #, greedy: true
 cask 'font-meslo-lg-nerd-font'
 # cask 'git-credential-manager'  # https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git
-# cask 'intellij-idea-ce'
-cask 'iterm2@nightly'
+cask 'google-chrome@beta'
+cask 'intellij-idea-ce'
+cask 'iterm2@beta'
 cask 'itsycal'
-# cask 'kdiff3'
 cask 'keepassxc@beta'
 cask 'keepingyouawake'
 cask 'keybase'
@@ -108,16 +107,17 @@ cask 'monolingual'
 # cask 'netspot'
 # cask 'ngrok'
 cask 'notunes'
-# cask 'onyx'  # Commented out since I'm on the beta version of macos
 cask 'protonvpn'
-cask 'rancher'
+# cask 'rancher'
 cask 'raycast'
 cask 'silicon' if is_arm
 cask 'stats'
+# cask 'telegram-a'
 # cask 'tempbox'
 cask 'the-unarchiver'
-cask 'thunderbird@daily'  # TODO: Commented out since I haven't opened TBird for the past 6 months - maybe its time to let go
 cask 'vscodium@insiders'   # TODO: Doesn't handle 'Remote Containers' and GH-based auto-syncing when comparing to VSCode
+cask 'vlc'
+cask 'whatsapp'
 cask 'zoom'
 
 # VSCode extensions

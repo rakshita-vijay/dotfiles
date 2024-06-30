@@ -88,6 +88,8 @@ app_array=(
   'com.apple.trackpad.twoFingerFromRightEdgeSwipeGesture'
   'com.apple.universalaccessAuthWarning'
   'com.apple.wallpaper'
+  'com.avira.security'
+  'com.bitwarden.desktop'
   'com.brave.Browser.beta'
   'com.brave.Browser.nightly'
   'com.cloudflare.1dot1dot1dot1.macos'

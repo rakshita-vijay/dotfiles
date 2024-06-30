@@ -48,7 +48,7 @@ update_repo() {
       default_contents=".bin/macos/defaults/"
       ;;
     "${PERSONAL_PROFILES_DIR}" )
-      default_contents="ArcProfile BraveProfile FirefoxProfile KeePassXCProfile SyncthingProfile ThunderbirdProfile"
+      default_contents="BraveProfile ChromeBetaProfile ChromeProfile FirefoxProfile KeePassXCProfile"
       ;;
     * )
       echo "Unknown value entered: ${folder}"

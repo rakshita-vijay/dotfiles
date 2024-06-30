@@ -5,7 +5,7 @@
 # file location: <anywhere> (just need to invoke it from that location)
 
 # You can run this script using this command:
-# curl -fsSL https://raw.githubusercontent.com/vraravam/dotfiles/master/scripts/fresh-install-of-osx.sh | zsh
+# curl -fsSL https://raw.githubusercontent.com/rakshita-vijay/dotfiles/master/scripts/fresh-install-of-osx.sh | zsh
 
 # BEFORE STARTING TO RUN THIS SCRIPT (for the first time on a new machine)
 # 1. Login into Apple App store
@@ -28,7 +28,7 @@ sudo networksetup -setdnsservers Wi-Fi 8.8.8.8
 
 # download and source this utility script - so that the functions are available for this script
 FIRST_INSTALL=true
-[ ! -f "${HOME}/.shellrc" ] && curl -fsSL https://raw.githubusercontent.com/vraravam/dotfiles/master/files/.shellrc -o "${HOME}/.shellrc"
+[ ! -f "${HOME}/.shellrc" ] && curl -fsSL https://raw.githubusercontent.com/rakshita-vijay/dotfiles/master/files/.shellrc -o "${HOME}/.shellrc"
 type load_file_if_exists &> /dev/null 2>&1 || source "${HOME}/.shellrc"
 
 ##################################
@@ -114,7 +114,7 @@ if [ ! -d "${DOTFILES_DIR}" ]; then
   rm -rfv "${HOME}/.zshrc"
 
   # Note: Cloning with https since the ssh keys will not be present at this time
-  git clone https://github.com/vraravam/dotfiles "${DOTFILES_DIR}"
+  git clone https://github.com/rakshita-vijay/dotfiles "${DOTFILES_DIR}"
 
   # Setup the .bin-oss repo's upstream if it doesn't already point to vraravam's repo
   git -C "${DOTFILES_DIR}" remote -vv | grep vraravam
@@ -226,6 +226,7 @@ setup_login_item() {
 
 app_list=(
   'AlDente.app'
+  'Bitwarden.app'
   'Clocker.app'
   'Cloudflare WARP.app'
   'Command X.app'
