@@ -25,6 +25,7 @@ tap 'romkatv/powerlevel10k'
 brew 'bash'
 brew 'bat'
 brew 'btop'
+brew 'clang-format'
 brew 'curl'
 brew 'diff-so-fancy'
 brew 'direnv'
@@ -41,13 +42,10 @@ brew 'ncdu'
 brew 'powerlevel10k'
 brew 'prettyping'
 brew 'ripgrep'
-brew 'shellcheck'
-brew 'syncthing'
 brew 'tldr'
 brew 'vim'
 brew 'watch'
 brew 'wget'
-brew 'wifi-password'
 brew 'zsh'
 
 # ----------------------------------------------------------------------------------------------------------
@@ -58,12 +56,16 @@ mas 'iBar-Menubar icon control tool', id: 6443843900
 # ----------------------------------------------------------------------------------------------------------
 cask 'aldente'
 cask 'appcleaner'
-cask 'arc'
+cask 'bitwarden'
 cask 'brave-browser@nightly'
+cask 'cleanmymac'
 cask 'clocker'
 cask 'cloudflare-warp'
+cask 'command-x'
 cask 'firefox@nightly' #, greedy: true
 cask 'font-meslo-lg-nerd-font'
+cask 'google-chrome@beta'
+cask 'intellij-idea-ce'
 cask 'iterm2'
 cask 'itsycal'
 cask 'keepassxc@beta'
@@ -72,15 +74,14 @@ cask 'keybase'
 cask 'libreoffice'
 cask 'monolingual'
 cask 'notunes'
-cask 'ollama', restart_service: :changed
 cask 'protonvpn'
-cask 'rancher'
 cask 'raycast'
 cask 'silicon' if is_arm
 cask 'stats'
 cask 'the-unarchiver'
-cask 'thunderbird@daily'  # TODO: Commented out since I haven't opened TBird for the past 6 months - maybe its time to let go
 cask 'vscodium@insiders'   # TODO: Doesn't handle 'Remote Containers' and GH-based auto-syncing when comparing to VSCode
+cask 'vlc'
+cask 'whatsapp'
 cask 'zoom'
 
 # VSCode extensions
@@ -149,6 +150,7 @@ end
 
 # ---- command-line utilities
 # brew 'fzy'
+# brew 'shellcheck'
 
 # ---- git utilities
 # brew 'git-crypt'
@@ -163,13 +165,17 @@ end
 # brew 'libressl', link: true
 # brew 'localstack'
 # brew 'speedtest-cli'
+# brew 'syncthing'
+# brew 'wifi-password'
 
 # https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git
 # cask 'git-credential-manager'
 
 # ---- casks
+# cask 'arc'
 # cask 'dbeaver-community'
-# cask 'intellij-idea-ce'
+# cask 'dupeguru'
+# cask 'git-credential-manager'  # https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git
 # cask 'kdiff3'
 # cask 'keycastr'
 # cask 'licecap'
@@ -177,4 +183,6 @@ end
 # cask 'netspot'
 # cask 'ngrok'
 # cask 'onyx'  # Commented out since I'm on the beta version of macos
+# cask 'rancher'
+# cask 'telegram-a'
 # cask 'tempbox'
