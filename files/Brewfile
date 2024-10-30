@@ -74,6 +74,7 @@ cask 'microsoft-remote-desktop'
 cask 'monolingual'
 cask 'notunes'
 cask 'ollama', restart_service: :changed
+cask 'onyx'
 cask 'protonvpn'
 cask 'rancher'
 cask 'raycast'
@@ -176,5 +177,4 @@ end
 # cask 'lulu'
 # cask 'netspot'
 # cask 'ngrok'
-# cask 'onyx'  # Commented out since I'm on the beta version of macos
 # cask 'tempbox'
