@@ -42,6 +42,7 @@ brew 'powerlevel10k'
 # formulae pulled in for advanced configs (these are optional, but still recommended)
 brew 'bat'
 brew 'btop'
+brew 'clang-format'
 brew 'eza'
 brew 'git-extras'
 brew 'git-gui'
@@ -51,16 +52,23 @@ brew 'moreutils'
 brew 'ncdu'
 brew 'prettyping'
 brew 'ripgrep'
+brew 'swi-prolog'
 brew 'syncthing'
 brew 'tldr'
+brew 'watch'
 
 cask 'aldente'
 cask 'appcleaner'
-cask 'arc'
-cask 'brave-browser'
+cask 'bitwarden'
+cask 'brave-browser@nightly'
+cask 'cleanmymac'
 cask 'clocker'
+cask 'command-x'
 cask 'firefox@nightly' #, greedy: true
 cask 'font-meslo-lg-nerd-font'
+cask 'github'
+cask 'google-chrome@beta'
+cask 'intellij-idea-ce'
 cask 'iterm2'
 cask 'itsycal'
 cask 'jordanbaird-ice'
@@ -70,17 +78,17 @@ cask 'keybase'
 cask 'keycastr'
 cask 'libreoffice'
 cask 'monolingual'
+cask 'notion'
 cask 'notunes'
-cask 'ollama', restart_service: :changed
-cask 'onyx'
+cask 'obsidian'
 cask 'protonvpn'
-cask 'rancher'
 cask 'raycast'
 cask 'silicon' if is_arm
 cask 'stats'
 cask 'the-unarchiver'
+cask 'vlc'
 cask 'vscodium@insiders'   # TODO: Doesn't handle 'Remote Containers' and GH-based auto-syncing when compared to VSCode
-cask 'zen-browser@twilight'
+cask 'whatsapp'
 cask 'zoom'
 
 # VSCode extensions
@@ -150,6 +158,10 @@ end
 # brew 'kubernetes-cli', link: true   # Note: Had to do this: rm /usr/local/bin/kubectl && brew link --overwrite kubernetes-cli
 # brew 'kubernetes-helm'
 
+# ---- command-line utilities
+# brew 'fzy'
+# brew 'shellcheck'
+
 # ---- git utilities
 # brew 'git-crypt'
 
@@ -173,6 +185,17 @@ end
 # cask 'dbeaver-community'
 # cask 'git-credential-manager'   # https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git
 # cask 'intellij-idea-ce'
+# brew 'syncthing'
+# brew 'wifi-password'
+
+# https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git
+# cask 'git-credential-manager'
+
+# ---- casks
+# cask 'arc'
+# cask 'dbeaver-community'
+# cask 'dupeguru'
+# cask 'git-credential-manager'  # https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git
 # cask 'kdiff3'
 # cask 'licecap'
 # cask 'lulu'
@@ -180,5 +203,8 @@ end
 # cask 'microsoft-teams'
 # cask 'netspot'
 # cask 'ngrok'
+# cask 'onyx'  # Commented out since I'm on the beta version of macos
+# cask 'rancher'
+# cask 'telegram-a'
 # cask 'tempbox'
 # cask 'virtualbox'

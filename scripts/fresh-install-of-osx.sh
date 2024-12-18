@@ -257,7 +257,9 @@ setup_login_item() {
 
 app_list=(
   'AlDente.app'
+  'Bitwarden.app'
   'Clocker.app'
+  'Command X.app'
   'Ice.app'
   'Itsycal.app'
   'KeepingYouAwake.app'
