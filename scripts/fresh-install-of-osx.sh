@@ -305,7 +305,9 @@ fi
 section_header 'Setting up login items'
 app_list=(
   'AlDente.app'
+  'Bitwarden.app'
   'Clocker.app'
+  'Command X.app'
   'Ice.app'
   'Itsycal.app'
   'KeepingYouAwake.app'
