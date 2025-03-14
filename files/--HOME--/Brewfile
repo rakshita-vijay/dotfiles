@@ -61,42 +61,52 @@ return true if is_base_install
 # formulae pulled in for advanced configs (these are optional, but still recommended)
 brew 'bat'
 brew 'btop'
+brew 'clang-format'
 brew 'git-gui'
 brew 'jq'
 brew 'moreutils'
 brew 'ncdu'
 brew 'prettyping'
 brew 'ripgrep'
+brew 'swi-prolog'
 brew 'syncthing'
 brew 'tldr'
+brew 'watch'
 
 cask 'aldente', postinstall: "type setup_login_item &> /dev/null 2>&1 || source \"${HOME}/.aliases\"; setup_login_item 'AlDente'"
 cask 'appcleaner'
-cask 'brave-browser'
+cask 'bitwarden'
+cask 'brave-browser@nightly'
+cask 'cleanmymac'
 cask 'clocker', postinstall: "type setup_login_item &> /dev/null 2>&1 || source \"${HOME}/.aliases\"; setup_login_item 'Clocker'"
+cask 'command-x'
 cask 'firefox@nightly' #, greedy: true
+cask 'github'
+cask 'google-chrome@beta'
+cask 'intellij-idea-ce'
+cask 'itsycal'
 cask 'jordanbaird-ice', postinstall: "type setup_login_item &> /dev/null 2>&1 || source \"${HOME}/.aliases\"; setup_login_item 'Ice'"
 cask 'keepassxc@beta'
 cask 'keepingyouawake', postinstall: "type setup_login_item &> /dev/null 2>&1 || source \"${HOME}/.aliases\"; setup_login_item 'KeepingYouAwake'"
 cask 'keycastr'
-cask 'keyclu' if is_arm
 cask 'monolingual'
+cask 'notion'
 cask 'notunes'
+cask 'obsidian'
 cask 'ollama', restart_service: :changed
 cask 'onlyoffice'
-cask 'onyx'
+# cask 'onyx'
 cask 'protonvpn'
-cask 'rancher'
+# cask 'rancher'
 cask 'raycast', postinstall: "type setup_login_item &> /dev/null 2>&1 || source \"${HOME}/.aliases\"; setup_login_item 'Raycast'"
 cask 'silicon' if is_arm
 cask 'stats', postinstall: "type setup_login_item &> /dev/null 2>&1 || source \"${HOME}/.aliases\"; setup_login_item 'Stats'"
 cask 'the-unarchiver'
-cask 'vscodium@insiders'   # TODO: Doesn't handle 'Remote Containers' and GH-based auto-syncing when compared to VSCode
-cask 'zen-browser@twilight'
+cask 'visual-studio-code'
+cask 'vlc'
+cask 'whatsapp'
+cask 'whisky'
 cask 'zoom'
-
-brew 'mas'
-mas 'PDFgear', id: 6469021132
 
 # VSCode extensions
 # Note: I don't want brew to silently install VS Code (which is what it does currently if the following lines are present but it doesn't find code!)
@@ -133,7 +143,7 @@ if is_vscode_installed
   vscode 'rebornix.ruby'
   vscode 'redhat.vscode-yaml'
   vscode 'richie5um2.vscode-sort-json'
-  vscode 'shan.code-settings-sync'
+  # vscode 'shan.code-settings-sync'
   vscode 'tchayen.markdown-links'
   vscode 'tyriar.sort-lines'
   vscode 'vscode-icons-team.vscode-icons'
@@ -146,10 +156,6 @@ end
 
 # ----------------------------------------------------------------------------------------------------------
 # Moved these brew and cask lines to clean up the noise from the above alphabetically sorted lists
-
-# ---- zen-browser development
-brew 'gnu-tar'
-brew 'mercurial'
 
 # ---- docker utilities
 # brew 'dive'   # docker layers inspection on steroids
@@ -178,11 +184,7 @@ brew 'mercurial'
 # brew 'wifi-password'
 
 # ---- casks
-# cask 'cloudflare-warp'
 # cask 'dbeaver-community'
-# cask 'ghostty'
-# cask 'git-credential-manager'   # https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git
-# cask 'intellij-idea-ce'
 # cask 'kdiff3'
 # cask 'licecap'
 # cask 'lulu'
