@@ -29,7 +29,6 @@ puts "Only performing base installation!" if is_base_install
 at_exit { system('post-brew-install.sh') }
 
 tap 'romkatv/powerlevel10k'
-tap 'Picocrypt/picocrypt' if is_arm
 
 # formulae pulled in from homebrew to replace system equivalents to fix any security issues since the OS was released
 brew 'bash'
@@ -58,58 +57,66 @@ cask 'keybase', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 
 return 0 if is_base_install
 
 # formulae pulled in for advanced configs (these are optional, but still recommended)
+brew 'appium'
 brew 'bat'
 brew 'btop'
+brew 'clang-format'
 brew 'git-gui'
 brew 'jq'
 brew 'moreutils'
+brew 'mysql'
 brew 'ncdu'
 brew 'prettyping'
 brew 'ripgrep'
+brew 'swi-prolog'
+brew 'selenium-server'
 brew 'syncthing'
 brew 'tldr'
+brew 'watch'
 
 cask 'aldente', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'AlDente'"
+cask 'anaconda'
+cask 'asana'
+cask 'bitwarden'
 cask 'brave-browser'
+cask 'brave-browser@nightly'
+cask 'cleanmymac'
 cask 'clocker', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'Clocker'"
+cask 'command-x'
 cask 'firefox@nightly' #, greedy: true
 cask 'fliqlo'
+cask 'github'
+cask 'google-chrome@beta'
+cask 'intellij-idea-ce'
+cask 'itsycal'
 cask 'jordanbaird-ice', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'Ice'" if OS::Mac::version >= 14
 cask 'keepassxc@beta'
 cask 'keycastr'
 cask 'keyclu' if is_arm
+cask 'monolingual'
+cask 'notion'
+cask 'notunes'
+cask 'obsidian'
 cask 'ollama', restart_service: :changed
 cask 'onlyoffice'
 cask 'onyx'
 cask 'pearcleaner'
-cask 'picocrypt' if is_arm
 cask 'protonvpn'
-cask 'rancher'
 cask 'raycast', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'Raycast'"
+cask 'spotify'
 cask 'stats', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'Stats'"
+cask 'sublime-text'
 cask 'the-unarchiver'
-cask 'vscodium@insiders'   # TODO: Doesn't handle 'Remote Containers' and GH-based auto-syncing when compared to VSCode
-cask 'zen@twilight'
+cask 'visual-studio-code'
+cask 'vlc'
+cask 'whatsapp'
+cask 'whisky'
 cask 'zoom'
-
-brew 'mas'
-mas 'PDFgear', id: 6469021132
 
 # VSCode extensions
 # Note: I don't want brew to silently install VS Code (which is what it does currently if the following lines are present but it doesn't find code!)
 is_vscode_installed = !`PATH="/opt/homebrew/bin:/usr/local/bin:${PATH}" which code`.chomp.empty?  # explicitly set PATH since the shell being opened doesn't run the login configs
 if is_vscode_installed
-  # This is failing on different machines
-  # vscode 'eamodio.gitlens'
-  # vscode 'formulahendry.code-runner'
-  # vscode 'nicolasvuillamy.vscode-groovy-lint'
-  # vscode 'redhat.java'
-  # vscode 'sonarsource.sonarlint-vscode'
-  # vscode 'vscjava.vscode-java-debug'
-  # vscode 'vscjava.vscode-java-pack'
-  # vscode 'vscjava.vscode-java-test'
-  # vscode 'vscjava.vscode-lombok'
-  # vscode 'wholroyd.jinja'
   vscode 'brandonkirbyson.vscode-animations'
   vscode 'britesnow.vscode-toggle-quotes'
   vscode 'codezombiech.gitignore'
@@ -132,7 +139,6 @@ if is_vscode_installed
   vscode 'orta.vscode-jest'
   vscode 'redhat.vscode-yaml'
   vscode 'richie5um2.vscode-sort-json'
-  vscode 'shan.code-settings-sync'
   vscode 'shopify.ruby-lsp'
   vscode 'tchayen.markdown-links'
   vscode 'tyriar.sort-lines'
@@ -176,11 +182,7 @@ end
 # brew 'wifi-password'
 
 # ---- casks
-# cask 'cloudflare-warp'
 # cask 'dbeaver-community'
-# cask 'ghostty'
-# cask 'git-credential-manager'   # https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git
-# cask 'intellij-idea-ce'
 # cask 'kdiff3'
 # cask 'knockknock'
 # cask 'licecap'
