@@ -6,13 +6,13 @@
 # Do not exit immediately if a command exits with a non-zero status since this is run within a cronjob
 
 # Source helpers only once if any required function is missing
-type is_directory &> /dev/null 2>&1 || source "${HOME}/.shellrc"
+type is_directory 2>&1 &> /dev/null || source "${HOME}/.shellrc"
 
 local app_path="/Applications/${1}.app"
 if is_directory "${app_path}"; then
   local found=$(osascript -e 'tell application "System Events" to get the name of every login item' | \grep -i "${1}")
   if ! is_non_zero_string "${found}"; then
-    osascript -e "tell application \"System Events\" to make login item at end with properties {path:\"${app_path}\", hidden:false}" 2>&1 > /dev/null
+    osascript -e "tell application \"System Events\" to make login item at end with properties {path:\"${app_path}\", hidden:false}" 2>&1 &> /dev/null
     success "Successfully setup '$(yellow "${1}")' as a login item"
   fi
   unset found

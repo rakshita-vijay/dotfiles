@@ -81,20 +81,15 @@ cask 'brave-browser'
 cask 'clocker', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'Clocker'"
 cask 'firefox@nightly' #, greedy: true
 cask 'google-chrome@beta'
-cask 'grayjay'
 cask 'jordanbaird-ice@beta', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'Ice'" if ::OS::Mac::version >= 14
 cask 'keepassxc@beta'
-cask 'keycastr'
-cask 'keyclu' if is_arm
 cask 'ollama-app', restart_service: :changed
 cask 'onlyoffice'
-cask 'onyx' # if !is_beta_os && ::OS::Mac::version < 26
 cask 'pearcleaner'
 cask 'protonvpn'
 cask 'rancher' # if ::OS::Mac::version < 26
 cask 'raycast', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'Raycast'"
 cask 'stats', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'Stats'"
-cask 'tor-browser@alpha'
 cask 'vscodium@insiders'   # TODO: Doesn't handle 'Remote Containers' and GH-based auto-syncing when compared to VSCode
 cask 'zen@twilight'
 cask 'zoom'
@@ -196,12 +191,15 @@ end
 # cask 'cloudflare-warp'
 # cask 'dbeaver-community'
 # cask 'fliqlo'
+# cask 'floorp' # Doesn't have keyboard shortcuts to switch across workspaces
 # cask 'ghostty@tip' # Not using since it doesn't have many features (like broadcasting keystrokes to panels; using iTerm instead)
 # cask 'git-credential-manager'   # https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git
+# cask 'grayjay'
 # cask 'intellij-idea-ce'
 # cask 'kdiff3'
+# cask 'keycastr'
+# cask 'keyclu' if is_arm
 # cask 'knockknock'
-# cask 'floorp' # Doesn't have keyboard shortcuts to switch across workspaces
 # cask 'licecap'
 # cask 'lulu'
 # cask 'microsoft-remote-desktop'
@@ -210,8 +208,10 @@ end
 # cask 'netspot'
 # cask 'ngrok'
 # cask 'notunes'
+# cask 'onyx' # if !is_beta_os && ::OS::Mac::version < 26
 # cask 'silicon' if is_arm
 # cask 'tempbox'
 # cask 'the-unarchiver'
 # cask 'thunderbird@daily'
+# cask 'tor-browser@alpha'
 # cask 'utm'

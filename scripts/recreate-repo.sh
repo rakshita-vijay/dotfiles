@@ -9,7 +9,7 @@
 # Do not exit immediately if a command exits with a non-zero status since this is run even if there's no cron entry
 
 # Source shell helpers if they aren't already loaded
-if ! type red &> /dev/null 2>&1 || ! type strip_trailing_slash &> /dev/null 2>&1; then
+if ! type red 2>&1 &> /dev/null || ! type strip_trailing_slash 2>&1 &> /dev/null; then
   source "${HOME}/.shellrc"
 fi
 
@@ -51,7 +51,7 @@ extract_git_config_value() {
 }
 
 # Remove crontab while this script is running
-crontab -r &> /dev/null 2>&1
+crontab -r 2>&1 &> /dev/null
 
 # Capture information from pre-existing git repo
 local git_url="$(extract_git_config_value remote.origin.url)"

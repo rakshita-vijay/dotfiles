@@ -2,6 +2,11 @@ As documented in the README's [adopting](README.md#how-to-adoptcustomize-the-scr
 
 For those who follow this repo, here's the changelog for ease of adoption:
 
+### 2.0.35
+
+* Make handling of stdout and stderr consistent across all usages.
+* Handle immediate exit from shell scripts with appropriate error messages.
+
 ### 2.0.34
 
 * *[fresh-install-of-osx.sh]* Move the custom handling of the `direnv` for the home and profiles folders into `allow_all_direnv_configs`.

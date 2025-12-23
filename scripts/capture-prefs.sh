@@ -10,7 +10,7 @@
 # Run `defaults read` in an empty window of a terminal app, then use the search functionality to search for a known word related to that app (like eg app visible name, author, some setting that's unique to that app, etc). Once you find this, trace back to the left-most child (1st of the top-level parent) in the printed JSON to then get the real unique name of the app where its settings are stored. Please note that one app might have multiple such groups / names at the top-level (for eg zoom). If this is the case, you will need to capture each name individually.
 
 # Check for one key function defined in .shellrc to see if sourcing is needed
-if ! type red &> /dev/null 2>&1 || ! type is_non_zero_string &> /dev/null 2>&1; then
+if ! type red 2>&1 &> /dev/null || ! type is_non_zero_string 2>&1 &> /dev/null; then
   source "${HOME}/.shellrc"
 fi
 

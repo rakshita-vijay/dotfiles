@@ -5,8 +5,11 @@
 # This script is used to run some commands at the end of the 'brew bundle' command. They are not inlined into the Brewfile due to the need to escape quoted strings.
 # Do not exit immediately if a command exits with a non-zero status since this is run within a cronjob
 
+# Exit immediately if a command exits with a non-zero status.
+set -e
+
 # Source helpers only once if any required function is missing
-type section_header &> /dev/null 2>&1 || source "${HOME}/.shellrc"
+type section_header 2>&1 &> /dev/null || source "${HOME}/.shellrc"
 
 replace_symlink_if_needed() {
   if is_executable "${1}"; then
@@ -23,7 +26,7 @@ replace_symlink_if_needed() {
 }
 
 # This removal is required for completions from other plugins to work (for eg git-extras)
-rm -rf "${HOMEBREW_REPOSITORY}/share/zsh/site-functions/_git" &> /dev/null
+rm -rf "${HOMEBREW_REPOSITORY}/share/zsh/site-functions/_git" 2>&1 &> /dev/null || true
 
 # Link programs to open from the cmd-line
 section_header "$(yellow 'Linking') $(purple 'keybase') $(yellow 'for command-line invocation')"
@@ -31,7 +34,7 @@ if is_directory '/Applications/Keybase.app'; then
   replace_symlink_if_needed '/Applications/Keybase.app/Contents/SharedSupport/bin/keybase' "${HOMEBREW_PREFIX}/bin/keybase"
   replace_symlink_if_needed '/Applications/Keybase.app/Contents/SharedSupport/bin/git-remote-keybase' "${HOMEBREW_PREFIX}/bin/git-remote-keybase"
 
-  is_arm && sudo rm -rf /usr/local/bin/keybase /usr/local/bin/git-remote-keybase
+  is_arm && sudo rm -rf /usr/local/bin/keybase /usr/local/bin/git-remote-keybase || true
 else
   warn 'skipping symlinking keybase for command-line invocation'
 fi
