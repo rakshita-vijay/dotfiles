@@ -53,6 +53,11 @@
 *db-wal
 /_install*
 /.*.cache
+/.anaconda/navigator/**/*.jpg
+/.anaconda/navigator/**/*.lock
+/.anaconda/navigator/**/*.png
+/.anaconda/navigator/**/*.svg
+/.anaconda/navigator/ad_cache/
 /.android
 /.ansible
 /.aspnet/DataProtection-Keys

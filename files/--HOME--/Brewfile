@@ -59,57 +59,64 @@ cask 'iterm2'
 return 0 if is_base_install
 
 # formulae pulled in for advanced configs (these are optional, but still recommended)
+brew 'appium'
 brew 'bat'
 brew 'btop'
-# brew 'container', restart_service: :changed if ::OS::Mac::version >= 26
-brew 'dua-cli'
+brew 'clang-format'
 brew 'git-gui'
 brew 'jq'
+brew 'man-db'
 brew 'moreutils'
+brew 'mysql'
 brew 'ncdu'
-brew 'pandoc'
+brew 'portaudio'
 brew 'prettyping'
 brew 'ripgrep'
+brew 'selenium-server'
+brew 'swi-prolog'
 brew 'syncthing'
 brew 'tlrc'
+brew 'watch'
 
 cask 'aldente', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'AlDente'"
+cask 'anaconda'
+cask 'asana'
+cask 'bitwarden'
 cask 'boring-notch', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'boringNotch'" if ::OS::Mac::version >= 14
 cask 'brave-browser'
+cask 'brave-browser@nightly'
+cask 'cleanmymac'
 cask 'clocker', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'Clocker'"
+cask 'command-x'
 cask 'firefox@nightly' #, greedy: true
+cask 'github'
 cask 'google-chrome@beta'
-cask 'jordanbaird-ice@beta', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'Ice'" if ::OS::Mac::version >= 14
 cask 'keepassxc@beta'
+cask 'intellij-idea-ce'
+cask 'itsycal'
+cask 'jordanbaird-ice@beta', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'Ice'" if ::OS::Mac::version >= 14
+cask 'monolingual'
+cask 'notion'
+cask 'obsidian'
 cask 'ollama-app', restart_service: :changed
-cask 'onlyoffice'
+cask 'onyx' # if !is_beta_os && ::OS::Mac::version < 26
 cask 'pearcleaner'
 cask 'protonvpn'
-cask 'rancher' # if ::OS::Mac::version < 26
 cask 'raycast', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'Raycast'"
+cask 'spotify'
 cask 'stats', postinstall: "\"${HOME}/.dotfiles/scripts/setup-login-item.sh\" 'Stats'"
-cask 'vscodium@insiders'   # TODO: Doesn't handle 'Remote Containers' and GH-based auto-syncing when compared to VSCode
-cask 'zen@twilight'
+cask 'sublime-text'
+cask 'the-unarchiver'
+cask 'visual-studio-code'
+cask 'vlc'
+cask 'whatsapp'
+cask 'whisky'
 cask 'zoom'
-
-# brew 'mas'
-# mas 'PDFgear', id: 6469021132
 
 # VSCode extensions
 # Note: I don't want brew to silently install VS Code (which is what it does currently if the following lines are present but it doesn't find the executable 'code'!)
 is_vscode_installed = !`PATH="/opt/homebrew/bin:/usr/local/bin:${PATH}" which code`.chomp.empty?  # explicitly set PATH since the shell being opened doesn't run the login configs
 if is_vscode_installed
-  # This is failing on different machines
-  # vscode 'eamodio.gitlens'
-  # vscode 'formulahendry.code-runner'
-  # vscode 'nicolasvuillamy.vscode-groovy-lint'
-  # vscode 'redhat.java'
-  # vscode 'sonarsource.sonarlint-vscode'
-  # vscode 'vscjava.vscode-java-debug'
-  # vscode 'vscjava.vscode-java-pack'
-  # vscode 'vscjava.vscode-java-test'
-  # vscode 'vscjava.vscode-lombok'
-  # vscode 'wholroyd.jinja'
   vscode 'brandonkirbyson.vscode-animations'
   vscode 'britesnow.vscode-toggle-quotes'
   vscode 'codezombiech.gitignore'
@@ -134,7 +141,6 @@ if is_vscode_installed
   vscode 'orta.vscode-jest'
   vscode 'redhat.vscode-yaml'
   vscode 'richie5um2.vscode-sort-json'
-  vscode 'shan.code-settings-sync'
   vscode 'shopify.ruby-lsp'
   vscode 'tchayen.markdown-links'
   vscode 'tyriar.sort-lines'
@@ -186,7 +192,6 @@ end
 # brew 'wifi-password'
 
 # ---- casks
-# cask 'cloudflare-warp'
 # cask 'dbeaver-community'
 # cask 'fliqlo'
 # cask 'floorp' # Doesn't have keyboard shortcuts to switch across workspaces

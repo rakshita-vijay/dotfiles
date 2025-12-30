@@ -342,3 +342,24 @@ typeset -gU cdpath CPPFLAGS cppflags FPATH fpath infopath LDFLAGS ldflags MANPAT
 # for profiling zsh, see: https://unix.stackexchange.com/a/329719/27109
 # execute 'ZSH_PROFILE_RC=true zsh' and run 'zprof' to get the details
 [[ -n "${ZSH_PROFILE_RC+1}" ]] && zprof
+
+# The next line updates PATH for the Google Cloud SDK.
+load_file_if_exists "${HOME}/Downloads/google-cloud-sdk/path.zsh.inc"
+
+# The next line enables shell command completion for gcloud.
+load_file_if_exists "${HOME}/Downloads/google-cloud-sdk/completion.zsh.inc"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+  eval "$__conda_setup"
+else
+  if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+    . "/opt/anaconda3/etc/profile.d/conda.sh"
+  else
+    export PATH="/opt/anaconda3/bin:$PATH"
+  fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
