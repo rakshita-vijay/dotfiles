@@ -24,9 +24,9 @@
 # Disable blank line before prompt - iTerm2's auto-detection places mark on blank line instead of prompt
 # Testing: no blank line to see if mark appears on prompt line
 add_newline = false
-# REDUCED from 5000ms to 300ms - git operations should complete in <200ms
+# REDUCED from 5000ms to 500ms - git operations should complete in <200ms
 # If they take longer, skip the segment (better than blocking)
-command_timeout = 300
+command_timeout = 500
 
 # ── Left prompt ───────────────────────────────────────────────────────────────
 # Segment order: iterm2_mark → os → directory → git branch → git size → git status (if dirty/ahead/behind) → clean arrow (if clean) → git state → iterm2_end → character

@@ -58,7 +58,7 @@ module InstallDotfiles
     Logging.info 'Running in DRY-RUN mode -- no changes will be made' if dry_run
 
     # NOTE: cannot use Dir.glob since that doesn't handle hidden files
-    Find.find(EnvVars::DOTFILES_DIR.join('files')) do |source_path_str|
+    Find.find(EnvVars::DOTFILES_DIR.join('files').to_s) do |source_path_str|
       source_pn = Pathname.new(source_path_str)
 
       # Skip directories and ignored files/patterns
