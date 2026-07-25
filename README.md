@@ -46,25 +46,25 @@ _Note:_
 In your forked repo, make the following changes, commit and push _via the Github web-UI itself_ (for the first time before running the script). Once the above steps are done, and committed into your fork, then everytime you need to run the setup, you can run the `curl` commands that point to _your_ fork:
 
 1. **Before running the bootstrap command in [GettingStarted.md](GettingStarted.md)**, you MUST customize the following environment variables in the curl command to match your setup:
-   - `GH_USERNAME='vraravam'` — **REQUIRED**: Change to your GitHub username (this determines where the script clones the dotfiles repo from)
+   - `GH_USERNAME='rakshita-vijay'` — **REQUIRED**: Change to your GitHub username (this determines where the script clones the dotfiles repo from)
    - `DOTFILES_BRANCH='master'` — **OPTIONAL**: Change to a different branch name if you want to test changes before merging to master (see [How to test changes in your fork](#how-to-test-changes-in-your-fork-before-raising-a-pull-request))
    - `FIRST_INSTALL='true'` — **DO NOT CHANGE**: Required for vanilla OS setup
    - `CACHE_BUST_HEADERS='true'` — **DO NOT CHANGE**: Ensures latest version is fetched
    - `CURL_RETRY_OPTS='true'` — **DO NOT CHANGE**: Enables retry logic for network issues
 
 2. **In `files/--HOME--/.shellrc`**: Update the hardcoded username defaults to match your setup:
-   - `export GH_USERNAME='vraravam'` — **REQUIRED**: Change to your GitHub username (must match the value used in the curl command above)
+   - `export GH_USERNAME='rakshita-vijay'` — **REQUIRED**: Change to your GitHub username (must match the value used in the curl command above)
    - `export DOTFILES_BRANCH='master'` — **OPTIONAL**: Typically leave as 'master' unless testing a specific branch
    - `export UPSTREAM_GH_USERNAME='vraravam'` — **DO NOT CHANGE**: Must stay as 'vraravam' (parent repo owner)
-   - `export KEYBASE_USERNAME='avijayr'` — **OPTIONAL**: Change to your Keybase username, or comment out if not using Keybase
+   - `export KEYBASE_USERNAME='rakshita_vijay'` — **OPTIONAL**: Change to your Keybase username, or comment out if not using Keybase
 
 3. **In `scripts/utilities/env_vars.rb`**: Update the fallback defaults to match your usernames:
-   - `GH_USERNAME = ENV.fetch('GH_USERNAME', 'vraravam').freeze` — **REQUIRED**: Change the fallback `'vraravam'` to your GitHub username
+   - `GH_USERNAME = ENV.fetch('GH_USERNAME', 'rakshita-vijay').freeze` — **REQUIRED**: Change the fallback `'rakshita-vijay'` to your GitHub username
    - `DOTFILES_BRANCH = ENV.fetch('DOTFILES_BRANCH', 'master').freeze` — **OPTIONAL**: Typically leave as 'master'
    - `UPSTREAM_GH_USERNAME = ENV.fetch('UPSTREAM_GH_USERNAME', 'vraravam').freeze` — **DO NOT CHANGE**: Must stay as 'vraravam' (parent repo owner)
-   - `KEYBASE_USERNAME = _normalize_optional_string(ENV.fetch('KEYBASE_USERNAME', 'avijayr'))` — **OPTIONAL**: Change the fallback `'avijayr'` to your Keybase username, or leave as empty string if not using Keybase
+   - `KEYBASE_USERNAME = _normalize_optional_string(ENV.fetch('KEYBASE_USERNAME', 'rakshita_vijay'))` — **OPTIONAL**: Change the fallback `'rakshita_vijay'` to your Keybase username, or leave as empty string if not using Keybase
 
-4. **In this file (`README.md`) and `GettingStarted.md`**: Find and replace any remaining references to `vraravam` and `avijayr` with your usernames for consistency in documentation.
+4. **In this file (`README.md`) and `GettingStarted.md`**: Find and replace any remaining references to `rakshita-vijay` and `rakshita_vijay` with your usernames for consistency in documentation.
 
 5. **Review and update path-related env vars in `files/--HOME--/.shellrc`** to match your preferred folder layout:
    - `PROJECTS_BASE_DIR` (default: `${HOME}/dev`) — root folder where all your git repos will be cloned
@@ -74,7 +74,7 @@ In your forked repo, make the following changes, commit and push _via the Github
 
 6. **If you are not using Keybase** (or want to defer setting it up):
    - In `files/--HOME--/.shellrc`: Comment out all lines starting with `KEYBASE_`
-   - In `scripts/utilities/env_vars.rb`: Change the fallback values to empty strings for `KEYBASE_USERNAME`, `KEYBASE_HOME_REPO_NAME`, and `KEYBASE_PROFILES_REPO_NAME` (e.g., change `'avijayr'` to `''`, `'home'` to `''`, `'profiles'` to `''`). You cannot comment out the entire lines as they are constants that Ruby scripts depend on.
+   - In `scripts/utilities/env_vars.rb`: Change the fallback values to empty strings for `KEYBASE_USERNAME`, `KEYBASE_HOME_REPO_NAME`, and `KEYBASE_PROFILES_REPO_NAME` (e.g., change `'rakshita_vijay'` to `''`, `'home'` to `''`, `'profiles'` to `''`). You cannot comment out the entire lines as they are constants that Ruby scripts depend on.
    - The script will skip Keybase-dependent steps silently when these variables are empty or not set.
 
 7. Review all entries in the `files/--HOME--/Brewfile`, and ensure that there are no unwanted libraries/applications. If you have any doubts (if comparing with my [Brewfile](files/--HOME--/Brewfile)), you will need to search the internet for the uses of those libraries/applications and decide whether to retain each one or not.

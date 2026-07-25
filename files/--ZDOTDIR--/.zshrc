@@ -641,3 +641,15 @@ if [[ -n "${ITERM_SESSION_ID:-}" ]]; then
   # will have marks via starship segments.
   iterm2_mark_prompt_start
 fi
+
+# The next line updates PATH for the Google Cloud SDK.
+load_file_if_exists "${HOME}/Downloads/google-cloud-sdk/path.zsh.inc"
+# The next line enables shell command completion for gcloud.
+load_file_if_exists "${HOME}/Downloads/google-cloud-sdk/completion.zsh.inc"
+
+# bun
+export BUN_INSTALL="${HOME}/.bun"
+export PATH="${BUN_INSTALL}/bin:${PATH}"
+
+# bun completions
+[ -s "${BUN_INSTALL}/_bun" ] && source "${BUN_INSTALL}/_bun"
