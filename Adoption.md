@@ -47,7 +47,7 @@ Download the repository as a zip file to get all scripts:
 ```zsh
 # Download and extract repository
 cd /tmp
-curl -fsSL https://github.com/vraravam/dotfiles/archive/refs/heads/master.zip -o dotfiles.zip
+curl -fsSL https://github.com/rakshita-vijay/dotfiles/archive/refs/heads/master.zip -o dotfiles.zip
 unzip -q dotfiles.zip
 cd dotfiles-master
 
@@ -156,7 +156,7 @@ In **[Adoption.md](Adoption.md)** (this file) — find Phase 3.2 and change the 
 
 ```zsh
 # BEFORE (points to vraravam):
-export GH_USERNAME='vraravam' DOTFILES_BRANCH='master' ...
+export GH_USERNAME='rakshita-vijay' DOTFILES_BRANCH='master' ...
 
 # AFTER (points to YOUR_USERNAME):
 export GH_USERNAME='YOUR_USERNAME' DOTFILES_BRANCH='master' ...
@@ -305,10 +305,10 @@ On your target machine (fresh or wiped):
 ### 3.2 Run Bootstrap Command
 
 ```zsh
-export GH_USERNAME='vraravam' DOTFILES_BRANCH='master' FIRST_INSTALL='true' CACHE_BUST_HEADERS='true' CURL_RETRY_OPTS='true' COLUMNS="${COLUMNS}"; curl -H "Cache-Control: no-cache, no-store, must-revalidate" -H "Pragma: no-cache" -H "Expires: 0" --retry 5 --retry-delay 10 --retry-max-time 120 --max-time 150 --connect-timeout 30 --retry-connrefused -fsSL "https://raw.githubusercontent.com/${GH_USERNAME}/dotfiles/refs/heads/${DOTFILES_BRANCH}/scripts/fresh-install-of-osx.sh?$(date +%s)" | zsh 2>&1 | tee "${HOME}/Downloads/fresh-install-of-osx.log"; unset FIRST_INSTALL
+export GH_USERNAME='rakshita-vijay' DOTFILES_BRANCH='master' FIRST_INSTALL='true' CACHE_BUST_HEADERS='true' CURL_RETRY_OPTS='true' COLUMNS="${COLUMNS}"; curl -H "Cache-Control: no-cache, no-store, must-revalidate" -H "Pragma: no-cache" -H "Expires: 0" --retry 5 --retry-delay 10 --retry-max-time 120 --max-time 150 --connect-timeout 30 --retry-connrefused -fsSL "https://raw.githubusercontent.com/${GH_USERNAME}/dotfiles/refs/heads/${DOTFILES_BRANCH}/scripts/fresh-install-of-osx.sh?$(date +%s)" | zsh 2>&1 | tee "${HOME}/Downloads/fresh-install-of-osx.log"; unset FIRST_INSTALL
 ```
 
-Note: Change `vraravam` to your github username in the above command snippet. You can commit this change into your fork so that, for your own machine, you don't need to edit before copy-pasting every time.
+Note: Change `rakshita-vijay` to your github username in the above command snippet. You can commit this change into your fork so that, for your own machine, you don't need to edit before copy-pasting every time.
 
 **What it does:**
 

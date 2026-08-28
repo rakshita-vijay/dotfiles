@@ -66,39 +66,66 @@ cask 'iterm2@beta'
 # FIRST_INSTALL: While re-imaging the OS or setting up for the first time, install only the bare minimum apps/utilities above this line so that the rest of the backup restoration can proceed faster.
 
 # formulae pulled in for advanced configs (these are optional, but still recommended)
+brew 'appium'
 brew 'bat'
 brew 'btop'
+brew 'bun'
+brew 'clang-format'
 brew 'git-gui'
 brew 'git-sizer'
 brew 'jaq'
+brew 'jq'
+brew 'man-db'
 brew 'mole'
+brew 'mysql'
 brew 'ncdu'
 brew 'pandoc'
+brew 'portaudio'
 brew 'prettyping'
 brew 'ripgrep'
+brew 'selenium-server'
 brew 'shfmt'
 brew 'syncthing'
 brew 'tlrc'
+brew 'watch'
+brew 'zbar'
 
+cask 'anaconda'
+cask 'asana'
+cask 'basictex'
+cask 'bitwarden'
+cask 'brave-browser@nightly'
 cask 'clocker', postinstall: "\"#{setup_login_items_script}\" -a 'Clocker'"
 cask 'dbeaver-community'
-cask 'drawio'
 cask 'firefox@nightly' # , greedy: true
+cask 'github'
 cask 'google-chrome@beta'
+cask 'intellij-idea-ce'
 cask 'keepassxc@beta'
 cask 'keycastr', postinstall: "\"#{setup_login_items_script}\" -a 'Keycastr'"
 cask 'keyclu', postinstall: "\"#{setup_login_items_script}\" -a 'KeyClu'" if is_arm
-cask 'mechvibes', postinstall: "\"#{setup_login_items_script}\" -a 'Mechvibes'"
+# cask 'mechvibes', postinstall: "\"#{setup_login_items_script}\" -a 'Mechvibes'"
+cask 'microsoft-teams'
+# cask 'monolingual'
+cask 'notion'
+cask 'obsidian'
 cask 'onlyoffice'
+# cask 'onyx' # if !is_beta_os && ::OS::Mac::version < 26
+cask 'pearcleaner'
 cask 'protonvpn' # , postinstall: "\"#{setup_login_items_script}\" -a 'ProtonVPN'"
 cask 'rancher' # if ::OS::Mac::version < 26
 cask 'shortcat', postinstall: "\"#{setup_login_items_script}\" -a 'Shortcat'"
+cask 'spotify'
+cask 'sublime-text'
+cask 'termius'
 cask 'thaw', postinstall: "\"#{setup_login_items_script}\" -a 'Thaw'" if ::OS::Mac::version >= 14 && ::OS::Mac::version < 27
+cask 'visual-studio-code', postinstall:  "ln -sf '/Applications/Visual Studio Code.app/Contents/MacOS/Code' \"${HOMEBREW_PREFIX}/bin/code\""
 cask 'vorssaint/tap/vorssaint', trusted: true, postinstall: "\"#{setup_login_items_script}\" -a 'Vorssaint'"
+cask 'vlc'
+cask 'whatsapp'
+cask 'whisky'
 cask 'xykong/tap/flux-markdown', trusted: true, postinstall: 'qlmanage -r'
-cask 'zed@preview',
-  postinstall: "ln -sf '/Applications/Zed Preview.app/Contents/MacOS/cli' \"${HOMEBREW_PREFIX}/bin/zed\""
-cask 'zen@twilight'
+# cask 'zen@twilight'
 cask 'zoom'
 
 # local AI coding tools
@@ -113,43 +140,41 @@ brew 'opencode'
 # mas 'PDFgear', id: 6469021132
 
 # VSCode extensions
-# Note: Retained as a reference in case of a future switch back to VSCode or VSCodium.
-# To re-enable: uncomment the is_vscode_installed guard and the extension lines below.
-# Note: brew silently installs VS Code when these lines are present but 'code' is not in PATH.
-# is_vscode_installed = !`PATH="/opt/homebrew/bin:/usr/local/bin:${PATH}" which code`.chomp.empty?  # explicitly set PATH since the shell being opened doesn't run the login configs
-# if is_vscode_installed
-#   vscode 'britesnow.vscode-toggle-quotes'
-#   vscode 'codezombiech.gitignore'
-#   vscode 'davidanson.vscode-markdownlint'
-#   vscode 'dbaeumer.vscode-eslint'
-#   vscode 'digitalbrainstem.javascript-ejs-support'
-#   vscode 'drcika.apc-extension'
-#   vscode 'editorconfig.editorconfig'
-#   vscode 'esbenp.prettier-vscode'
-#   vscode 'genuitecllc.codetogether'
-#   vscode 'github.vscode-github-actions'
-#   vscode 'google.geminicodeassist'
-#   vscode 'ibm.output-colorizer'
-#   vscode 'mechatroner.rainbow-csv'
-#   vscode 'mikestead.dotenv'
-#   vscode 'mkhl.direnv'
-#   vscode 'ms-azuretools.vscode-containers'
-#   vscode 'ms-azuretools.vscode-docker'
-#   vscode 'ms-vscode.atom-keybindings'
-#   vscode 'ms-vscode.vscode-typescript-next'
-#   vscode 'oderwat.indent-rainbow'
-#   vscode 'orta.vscode-jest'
-#   vscode 'redhat.vscode-yaml'
-#   vscode 'richie5um2.vscode-sort-json'
-#   vscode 'shan.code-settings-sync'
-#   vscode 'shopify.ruby-lsp'
-#   vscode 'tchayen.markdown-links'
-#   vscode 'tyriar.sort-lines'
-#   vscode 'vscode-icons-team.vscode-icons'
-#   vscode 'wayou.vscode-todo-highlight'
-#   vscode 'wmaurer.change-case'
-#   vscode 'yzhang.markdown-all-in-one'
-# end
+# Note: I don't want brew to silently install VS Code (which is what it does currently if the following lines are present but it doesn't find the executable 'code'!)
+is_vscode_installed = !`PATH="/opt/homebrew/bin:/usr/local/bin:${PATH}" which code`.chomp.empty?  # explicitly set PATH since the shell being opened doesn't run the login configs
+if is_vscode_installed
+  vscode 'brandonkirbyson.vscode-animations'
+  vscode 'britesnow.vscode-toggle-quotes'
+  vscode 'codezombiech.gitignore'
+  vscode 'davidanson.vscode-markdownlint'
+  vscode 'dbaeumer.vscode-eslint'
+  vscode 'digitalbrainstem.javascript-ejs-support'
+  vscode 'drcika.apc-extension'
+  vscode 'editorconfig.editorconfig'
+  vscode 'esbenp.prettier-vscode'
+  vscode 'genuitecllc.codetogether'
+  vscode 'github.vscode-github-actions'
+  vscode 'google.geminicodeassist'
+  vscode 'ibm.output-colorizer'
+  vscode 'mechatroner.rainbow-csv'
+  vscode 'mikestead.dotenv'
+  vscode 'mkhl.direnv'
+  vscode 'ms-azuretools.vscode-containers'
+  vscode 'ms-azuretools.vscode-docker'
+  vscode 'ms-vscode.atom-keybindings'
+  vscode 'ms-vscode.vscode-typescript-next'
+  vscode 'oderwat.indent-rainbow'
+  vscode 'orta.vscode-jest'
+  vscode 'redhat.vscode-yaml'
+  vscode 'richie5um2.vscode-sort-json'
+  vscode 'shopify.ruby-lsp'
+  vscode 'tchayen.markdown-links'
+  vscode 'tyriar.sort-lines'
+  vscode 'vscode-icons-team.vscode-icons'
+  vscode 'wayou.vscode-todo-highlight'
+  vscode 'wmaurer.change-case'
+  vscode 'yzhang.markdown-all-in-one'
+end
 
 # ----------------------------------------------------------------------------------------------------------
 # Miscellaneous formulae and casks grouped separately to keep the main lists clean.
@@ -158,11 +183,11 @@ brew 'opencode'
 # cask 'Picocrypt/picocrypt/picocrypt', trusted: true if is_arm
 
 # ---- zen-browser development
-brew 'cairo'
-brew 'gnu-tar'
-brew 'mercurial'
-brew 'sccache'
-brew 'watchman'
+# brew 'cairo'
+# brew 'gnu-tar'
+# brew 'mercurial'
+# brew 'p7zip'
+# brew 'sccache'
 
 # ---- docker utilities
 # brew 'dive'   # docker layers inspection on steroids
@@ -198,6 +223,7 @@ brew 'watchman'
 # cask 'claude-code'
 # cask 'cloudflare-warp'
 # cask 'codeql'
+# cask 'dbeaver-community'
 # cask 'fliqlo'
 # cask 'floorp' # Doesn't have keyboard shortcuts to switch across workspaces
 # cask 'ghostty@tip' # Not using since it doesn't have many features (like broadcasting keystrokes to panels; using iTerm instead)

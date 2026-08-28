@@ -103,7 +103,7 @@ After running `fresh-install-of-osx.sh`, see [Adoption.md § Phase 3.3](Adoption
 
 **Quick summary** of files you'll typically customize in your fork (see [Adoption.md § Phase 2](Adoption.md#phase-2-fork-and-customize) for detailed instructions):
 
-- `Adoption.md` — Update bootstrap command in Phase 3.2 to reference YOUR_USERNAME instead of vraravam
+- `Adoption.md` — Update bootstrap command in Phase 3.2 to reference YOUR_USERNAME instead of rakshita-vijay
 - `files/--HOME--/.shellrc` — Change `GH_USERNAME`, `UPSTREAM_GH_USERNAME`, `KEYBASE_USERNAME`, and path env vars (`PROJECTS_BASE_DIR`, `PERSONAL_CONFIGS_DIR`, `PERSONAL_BIN_DIR`, `PERSONAL_PROFILES_DIR`)
 - `scripts/utilities/env_vars.rb` — Update Ruby fallback defaults for `GH_USERNAME`, `UPSTREAM_GH_USERNAME`, `KEYBASE_USERNAME`
 - `files/--HOME--/Brewfile` — Remove unwanted packages or merge with your exported Brewfile
