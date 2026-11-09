@@ -51,7 +51,7 @@ Download the repository as a zip file to get all scripts:
 
 ```zsh
 # Download and extract repository
-curl -fsSL https://github.com/vraravam/dotfiles/archive/refs/heads/master.zip -o /tmp/dotfiles.zip;
+curl -fsSL https://github.com/rakshita-vijay/dotfiles/archive/refs/heads/master.zip -o /tmp/dotfiles.zip;
 unzip -q /tmp/dotfiles.zip -d /tmp;
 
 # Set required environment variables for all scripts
@@ -203,7 +203,7 @@ rm -rf /tmp/dotfiles-master /tmp/dotfiles.zip;
 
 ### 2.1 Fork the Repository
 
-1. Go to https://github.com/vraravam/dotfiles
+1. Go to https://github.com/rakshita-vijay/dotfiles
 2. Click "Fork" button
 
 That's it for forking. See § 2.2 for the one thing you'll need to provide
@@ -217,8 +217,8 @@ and you supply it **in the command itself** when you run it (see
 [Phase 3.2](#32-run-bootstrap-command)), the same way you'd pass a parameter
 to any other installer:
 
-- **`GH_USERNAME`** -- your own GitHub username, in place of `vraravam` in the
-  `export GH_USERNAME='vraravam' ...` line. This is unavoidable: the command
+- **`GH_USERNAME`** -- your own GitHub username, in place of `rakshita-vijay` in the
+  `export GH_USERNAME='rakshita-vijay' ...` line. This is unavoidable: the command
   has to know which fork to clone before anything exists locally to derive it
   from. On a **new/vanilla machine there is nothing cloned yet, so you provide
   it there too** -- same as the very first time, every time you set up a
@@ -375,16 +375,16 @@ their respective vars are unset, and the clone steps log an info message and con
 #### D. CI Badges (Optional)
 
 The badges at the top of **[README.md](README.md)** (Lint, RSpec, codecov,
-Bundler Audit) hardcode `vraravam/dotfiles` in their URLs -- they show the
+Bundler Audit) hardcode `rakshita-vijay/dotfiles` in their URLs -- they show the
 CI status of the **original** repo until you update them to point at your
 own fork:
 
-- **Lint / RSpec / Bundler Audit**: replace `vraravam` with your GitHub
-  username in each `https://github.com/vraravam/dotfiles/actions/workflows/...`
+- **Lint / RSpec / Bundler Audit**: replace `rakshita-vijay` with your GitHub
+  username in each `https://github.com/rakshita-vijay/dotfiles/actions/workflows/...`
   URL. These work immediately -- no account/token setup needed, since they
   just link to your fork's own GitHub Actions runs.
-- **codecov**: also replace `vraravam` with your username in the
-  `https://codecov.io/gh/vraravam/dotfiles/...` URLs, then sign in to
+- **codecov**: also replace `rakshita-vijay` with your username in the
+  `https://codecov.io/gh/rakshita-vijay/dotfiles/...` URLs, then sign in to
   [codecov.io](https://codecov.io) with your GitHub account, add your fork,
   and add the resulting token as a repository secret named `CODECOV_TOKEN`
   (Settings → Secrets and variables → Actions). Until you do this, the
@@ -453,11 +453,11 @@ If you didn't change anything, skip straight to [Phase 3](#phase-3-first-time-se
 Copy-paste this single command to kick off the entire setup:
 
 ```zsh
-export GH_USERNAME='vraravam' DOTFILES_BRANCH='master' FIRST_INSTALL='true' CACHE_BUST_HEADERS='true' CURL_RETRY_OPTS='true' COLUMNS="${COLUMNS}"; curl -H "Cache-Control: no-cache, no-store, must-revalidate" -H "Pragma: no-cache" -H "Expires: 0" --retry 5 --retry-delay 10 --retry-max-time 120 --max-time 150 --connect-timeout 30 --retry-connrefused -fsSL "https://raw.githubusercontent.com/${GH_USERNAME}/dotfiles/refs/heads/${DOTFILES_BRANCH}/scripts/fresh-install-of-osx.sh?$(date +%s)" | zsh 2>&1 | tee "${HOME}/Downloads/fresh-install-of-osx.log"; unset FIRST_INSTALL;
+export GH_USERNAME='rakshita-vijay' DOTFILES_BRANCH='master' FIRST_INSTALL='true' CACHE_BUST_HEADERS='true' CURL_RETRY_OPTS='true' COLUMNS="${COLUMNS}"; curl -H "Cache-Control: no-cache, no-store, must-revalidate" -H "Pragma: no-cache" -H "Expires: 0" --retry 5 --retry-delay 10 --retry-max-time 120 --max-time 150 --connect-timeout 30 --retry-connrefused -fsSL "https://raw.githubusercontent.com/${GH_USERNAME}/dotfiles/refs/heads/${DOTFILES_BRANCH}/scripts/fresh-install-of-osx.sh?$(date +%s)" | zsh 2>&1 | tee "${HOME}/Downloads/fresh-install-of-osx.log"; unset FIRST_INSTALL;
 ```
 
-Note: This command is ready to copy-paste-run as-is on `vraravam`'s own machines.
-If you forked this repo, replace `vraravam` with your own GitHub username and
+Note: This command is ready to copy-paste-run as-is on `rakshita-vijay`'s own machines.
+If you forked this repo, replace `rakshita-vijay` with your own GitHub username and
 commit that change into your fork, so it's likewise ready to copy-paste-run
 for you every time, without editing first.
 

@@ -24,8 +24,8 @@ export KEYBASE_HOME_REPO_NAME='home';
 export KEYBASE_PROFILES_REPO_NAME='profiles';
 
 # Encrypted backup (comment out to disable) -- full URLs, not bare names, see below
-export ENCRYPTED_HOME_REPO_URL='https://github.com/vraravam/home.git';
-export ENCRYPTED_PROFILES_REPO_URL='https://github.com/vraravam/browser-profiles.git';
+export ENCRYPTED_HOME_REPO_URL='https://github.com/rakshita-vijay/home.git';
+export ENCRYPTED_PROFILES_REPO_URL='https://github.com/rakshita-vijay/browser-profiles.git';
 ```
 
 Both pairs are active by default. When both are enabled for the same repo, `fresh-install-of-osx.sh`

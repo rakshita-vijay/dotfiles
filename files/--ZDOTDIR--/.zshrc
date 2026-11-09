@@ -942,3 +942,8 @@ fi
 # to suppress their banners (they think they're nested when they're not).
 # Unsetting here ensures every new shell starts with a clean slate (defaults to 0).
 unset _DOTFILES_SCRIPT_DEPTH
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/rakshita/.docker/completions $fpath)
+autoload -Uz compinit
+(( ${+_comps[docker]} )) || compinit
+# End of Docker CLI completions

@@ -106,43 +106,63 @@ cask 'iterm2@beta'
 # FIRST_INSTALL: While re-imaging the OS or setting up for the first time, install only the bare minimum apps/utilities above this line so that the rest of the backup restoration can proceed faster. (The install scripts cut this file at this exact line -- keep the '# FIRST_INSTALL:' prefix.)
 
 # formulae pulled in for advanced configs (these are optional, but still recommended)
+brew 'appium'
 brew 'bat'
 brew 'btop'
+brew 'bun'
+brew 'clang-format'
 brew 'git-gui'
 brew 'git-sizer'
 brew 'jaq'
+brew 'jq'
+brew 'man-db'
 brew 'mole'
+brew 'mysql'
 brew 'ncdu'
 brew 'nikgrbn/tap/finder-menu', trusted: true, postinstall: 'finder-menu enable'
 brew 'pandoc'
+brew 'portaudio'
 brew 'prettyping'
 brew 'ripgrep'
+brew 'selenium-server'
 brew 'shfmt'
 brew 'syncthing'
 brew 'tlrc'
+brew 'watch'
+brew 'zbar'
 
+cask 'anaconda'
+cask 'asana'
+cask 'basictex'
+cask 'bitwarden'
+cask 'brave-browser'
+cask 'brave-browser@nightly'
 cask 'clocker', postinstall: "\"#{setup_login_items_script}\" -a 'Clocker'"
 cask 'dbeaver-community'
-cask 'drawio'
+cask 'docker-desktop'
 cask 'firefox@nightly' # , greedy: true
+cask 'github'
 cask 'google-chrome@beta'
+cask 'intellij-idea-ce'
 cask 'keepassxc'
-cask 'keycastr'  # , postinstall: "\"#{setup_login_items_script}\" -a 'Keycastr'"
+cask 'keycastr', postinstall: "\"#{setup_login_items_script}\" -a 'Keycastr'"
 cask 'keyclu', postinstall: "\"#{setup_login_items_script}\" -a 'KeyClu'" if is_arm
-cask 'okta-verify', postinstall: "\"#{setup_login_items_script}\" -a 'Okta Verify 2'"
 # cask 'onlyoffice'
 cask 'protonvpn' # , postinstall: "\"#{setup_login_items_script}\" -a 'ProtonVPN'"
 cask 'qlmarkdown'
-cask 'rancher' # if ::OS::Mac::version < 26
+# cask 'rancher' # if ::OS::Mac::version < 26
 cask 'shortcat', postinstall: "\"#{setup_login_items_script}\" -a 'Shortcat'"
+cask 'spotify'
+cask 'sublime-text'
+cask 'termius'
 cask 'thaw', postinstall: "\"#{setup_login_items_script}\" -a 'Thaw'" if ::OS::Mac::version >= 14 && ::OS::Mac::version < 27
+cask 'visual-studio-code', postinstall:  "ln -sf '/Applications/Visual Studio Code.app/Contents/MacOS/Code' \"${HOMEBREW_PREFIX}/bin/code\""
 cask 'vorssaint/tap/vorssaint', trusted: true, postinstall: "\"#{setup_login_items_script}\" -a 'Vorssaint'"
 cask 'vraravam/tap/mechvibes', trusted: true, postinstall: "\"#{setup_login_items_script}\" -a 'Mechvibes'"
 cask 'vraravam/tap/wobbly', trusted: true, postinstall: "\"#{setup_login_items_script}\" -a 'Wobbly'"
-cask 'vscodium@insiders',
-  postinstall: "ln -sf '/Applications/VSCodium - Insiders.app/Contents/Resources/app/bin/codium-insiders' \"${HOMEBREW_PREFIX}/bin/codium-insiders\" && " \
-               "ln -sf \"${HOMEBREW_PREFIX}/bin/codium-insiders\" \"${HOMEBREW_PREFIX}/bin/codium\" && " \
-               "ln -sf \"${HOMEBREW_PREFIX}/bin/codium\" \"${HOMEBREW_PREFIX}/bin/code\""
+cask 'vlc'
+cask 'whatsapp'
+cask 'whisky'
 # cask 'xykong/tap/flux-markdown', trusted: true, postinstall: 'qlmanage -r'
 # cask 'zed@preview',
 #   postinstall: "ln -sf '/Applications/Zed Preview.app/Contents/MacOS/cli' \"${HOMEBREW_PREFIX}/bin/zed\""
@@ -150,9 +170,9 @@ cask 'zen@twilight'
 cask 'zoom'
 
 # Trial to replace onlyoffice suite
-cask 'gridcraft'
-cask 'pdfcraft'
-cask 'wordcraft'
+# cask 'gridcraft'
+# cask 'pdfcraft'
+# cask 'wordcraft'
 
 # local AI coding tools
 # tap 'jundot/omlx', 'git@github.com/jundot/omlx'
@@ -184,6 +204,7 @@ ENV['VSCODE_GALLERY_CONTROL_URL'] = ''
 ENV['VSCODE_GALLERY_RECOMMENDATIONS_URL'] = ''
 is_vscode_installed = !`PATH="/opt/homebrew/bin:/usr/local/bin:${PATH}" which code`.chomp.empty?  # explicitly set PATH since the shell being opened doesn't run the login configs
 if is_vscode_installed
+  vscode 'brandonkirbyson.vscode-animations'
   vscode 'britesnow.vscode-toggle-quotes'
   vscode 'codezombiech.gitignore'
   vscode 'continue.continue'
@@ -202,6 +223,8 @@ if is_vscode_installed
   vscode 'mkhl.direnv'
   vscode 'ms-azuretools.vscode-containers'
   vscode 'ms-azuretools.vscode-docker'
+  vscode 'ms-vscode-remote.remote-ssh-edit'
+  vscode 'ms-vscode-remote.remote-ssh'
   vscode 'ms-vscode.atom-keybindings'
   vscode 'ms-vscode.vscode-typescript-next'
   vscode 'oderwat.indent-rainbow'
@@ -215,6 +238,7 @@ if is_vscode_installed
   vscode 'wayou.vscode-todo-highlight'
   vscode 'wmaurer.change-case'
   vscode 'yzhang.markdown-all-in-one'
+  vscode "ms-vscode.remote-explorer"
 end
 
 # ----------------------------------------------------------------------------------------------------------
@@ -224,11 +248,11 @@ end
 # cask 'Picocrypt/picocrypt/picocrypt', trusted: true if is_arm
 
 # ---- zen-browser development
-brew 'cairo'
-brew 'gnu-tar'
-brew 'mercurial'
-brew 'sccache'
-brew 'watchman'
+# brew 'cairo'
+# brew 'gnu-tar'
+# brew 'mercurial'
+# brew 'p7zip'
+# brew 'sccache'
 
 # ---- docker utilities
 # brew 'dive'   # docker layers inspection on steroids
@@ -264,6 +288,7 @@ brew 'watchman'
 # cask 'claude-code'
 # cask 'cloudflare-warp'
 # cask 'codeql'
+# cask 'dbeaver-community'
 # cask 'fliqlo'
 # cask 'floorp' # Doesn't have keyboard shortcuts to switch across workspaces
 # cask 'ghostty@tip' # Not using since it doesn't have many features (like broadcasting keystrokes to panels; using iTerm instead)

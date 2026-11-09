@@ -133,10 +133,10 @@ module EnvVars
   # above -- both can be enabled at once (see KeybaseMigration.md). Unlike
   # KEYBASE_*_REPO_NAME above, this holds a full URL, not a bare repo name -- that tool
   # has no concept of a "default owner" to derive a full URL from a bare name.
-  # Mirrors: export ENCRYPTED_HOME_REPO_URL='https://github.com/vraravam/home.git'
+  # Mirrors: export ENCRYPTED_HOME_REPO_URL='https://github.com/rakshita-vijay/home.git'
   ENCRYPTED_HOME_REPO_URL = _normalize_optional_string(ENV.fetch('ENCRYPTED_HOME_REPO_URL', nil))
 
-  # Mirrors: export ENCRYPTED_PROFILES_REPO_URL='https://github.com/vraravam/browser-profiles.git'
+  # Mirrors: export ENCRYPTED_PROFILES_REPO_URL='https://github.com/rakshita-vijay/browser-profiles.git'
   ENCRYPTED_PROFILES_REPO_URL = _normalize_optional_string(ENV.fetch('ENCRYPTED_PROFILES_REPO_URL', nil))
 
   # ---------------------------------------------------------------------------

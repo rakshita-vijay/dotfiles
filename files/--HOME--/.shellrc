@@ -128,8 +128,8 @@ export KEYBASE_PROFILES_REPO_NAME='profiles'
 # mechanism. Takes a full URL (any git host), unlike KEYBASE_*_REPO_NAME above -- that
 # tool has no concept of a "default owner" to derive from a repo name, by design (see
 # its docs/DESIGN.md § Remote naming is entirely outside this tool's purview).
-# export ENCRYPTED_HOME_REPO_URL='https://github.com/vraravam/home.git'
-# export ENCRYPTED_PROFILES_REPO_URL='https://github.com/vraravam/browser-profiles.git'
+# export ENCRYPTED_HOME_REPO_URL='https://github.com/rakshita-vijay/home.git'
+# export ENCRYPTED_PROFILES_REPO_URL='https://github.com/rakshita-vijay/browser-profiles.git'
 # --------------------------------------------------------------------------------
 
 # ---------- Env vars for basic/common setup (can be optionally changed) ---------
@@ -2259,7 +2259,7 @@ _post_clone_maintenance() {
 #
 # <clone-url> (first argument) must be a fully-qualified clone URL: any scheme 'git
 # clone' itself accepts (https://, http://, ssh://, git://, git+ssh://, file://),
-# scp-style SSH (user@host:path, e.g. 'git@github.com:vraravam/dotfiles.git' -- see
+# scp-style SSH (user@host:path, e.g. 'git@github.com:rakshita-vijay/dotfiles.git' -- see
 # GitProcessor::GitUrlParser, which documents this as the most common format
 # 'git remote get-url origin' returns, and which resurrect-repositories.rb feeds
 # straight back into this function), 'keybase://...', or 'gpg-encrypt::<url>'.

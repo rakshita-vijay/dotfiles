@@ -6,10 +6,10 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Shell](https://img.shields.io/badge/Shell-Zsh-green?logo=zsh)](https://zsh.sourceforge.io/)
 
-[![Lint](https://github.com/vraravam/dotfiles/actions/workflows/lint.yml/badge.svg)](https://github.com/vraravam/dotfiles/actions/workflows/lint.yml)
-[![RSpec](https://github.com/vraravam/dotfiles/actions/workflows/rspec.yml/badge.svg)](https://github.com/vraravam/dotfiles/actions/workflows/rspec.yml)
-[![codecov](https://codecov.io/gh/vraravam/dotfiles/branch/master/graph/badge.svg)](https://codecov.io/gh/vraravam/dotfiles)
-[![Bundler Audit](https://github.com/vraravam/dotfiles/actions/workflows/bundler-audit.yml/badge.svg)](https://github.com/vraravam/dotfiles/actions/workflows/bundler-audit.yml)
+[![Lint](https://github.com/rakshita-vijay/dotfiles/actions/workflows/lint.yml/badge.svg)](https://github.com/rakshita-vijay/dotfiles/actions/workflows/lint.yml)
+[![RSpec](https://github.com/rakshita-vijay/dotfiles/actions/workflows/rspec.yml/badge.svg)](https://github.com/rakshita-vijay/dotfiles/actions/workflows/rspec.yml)
+[![codecov](https://codecov.io/gh/rakshita-vijay/dotfiles/branch/master/graph/badge.svg)](https://codecov.io/gh/rakshita-vijay/dotfiles)
+[![Bundler Audit](https://github.com/rakshita-vijay/dotfiles/actions/workflows/bundler-audit.yml/badge.svg)](https://github.com/rakshita-vijay/dotfiles/actions/workflows/bundler-audit.yml)
 
 A comprehensive, idempotent backup and restore strategy that configures your mac for modern software development. Supports both **Intel** and **Apple Silicon** macs with automatic architecture detection.
 

@@ -379,6 +379,7 @@ node_modules/
 /Virtual\ Machines*/
 /VirtualBox*/
 /*.key
+/.bun/install/cache/
 
 
 # ══════════════════════════════════════════════════════════════════════════════
